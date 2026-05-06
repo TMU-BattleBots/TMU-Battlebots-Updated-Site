@@ -58,7 +58,7 @@ params:
 
   p1:
     heading: "Our Mission"
-    image: "images/pages/our-mission.png"
+    image: "images/background-image.jpg"
     content:
       - text: "TMU BattleBots is a student-run club focused on designing, building, and competing with combat robots across different weight classes. Based at Toronto Metropolitan University, our team brings together students passionate about engineering, robotics, and competitive design."
       - text: "We foster a collaborative and innovative environment where students can develop their skills and bring ideas to life. Our team works on everything from mechanical design and electronics to programming and combat strategy."
