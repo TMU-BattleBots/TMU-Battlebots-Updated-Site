@@ -123,6 +123,10 @@ menu:
       name: Sponsors
       url: /sponsors/
       weight: 45
+    - identifier: join-team
+      name: Join The Team
+      url: "https://forms.gle/cHGJAL5FQGp8nD5n7"
+      weight: 50
   dropdown:
     - identifier: appearance
       pre: stars # can be stars, comments or piechart
@@ -163,6 +167,10 @@ menu:
       name: Sponsors
       url: /sponsors/
       weight: 45
+    - identifier: join-team
+      name: Join The Team
+      url: "https://forms.gle/cHGJAL5FQGp8nD5n7"
+      weight: 50
 
 taxonomies:
   category: Categories
