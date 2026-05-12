@@ -1,0 +1,6 @@
+body.home-bg {
+  background-image: url("/images/background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
