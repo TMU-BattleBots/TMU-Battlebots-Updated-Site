@@ -58,12 +58,12 @@
     <!-- Weight class buttons -->
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-bottom:2rem;">
       <button @click="weightClass = 'all'"
-        style="padding:0.625rem 1.25rem;border-radius:9999px;border:1px solid #374151;background:#1f2937;color:white;font-size:0.9rem;cursor:pointer;">
+        :style="'padding:0.625rem 1.25rem;border-radius:9999px;border:1px solid #374151;font-size:0.9rem;cursor:pointer;' + (weightClass === 'all' ? 'background:#eef2ff;color:#0f172a;' : 'background:#1f2937;color:white;')">
         All Bots
       </button>
       <template x-for="wc in weightClasses" :key="wc">
         <button @click="weightClass = wc"
-          style="padding:0.625rem 1.25rem;border-radius:9999px;border:1px solid #374151;background:#1f2937;color:white;font-size:0.9rem;cursor:pointer;"
+          :style="'padding:0.625rem 1.25rem;border-radius:9999px;border:1px solid #374151;font-size:0.9rem;cursor:pointer;' + (weightClass === wc ? 'background:#eef2ff;color:#0f172a;' : 'background:#1f2937;color:white;')"
           x-text="wc + ' Class'">
         </button>
       </template>
