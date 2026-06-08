@@ -1,0 +1,112 @@
+{{ define "main" }}
+<main class="battlebots-page home-bg">
+    <section class="battlebots-hero">
+        <div class="px-4 py-16 mx-auto max-w-screen-xl text-center">
+            {{ $heroImage := resources.Get "images/pages/tmu-battlebots-logo.png" }}
+            {{ if $heroImage }}
+                {{ $heroWebP := $heroImage.Resize "320x320 webp q85" }}
+                <img
+                    src="{{ $heroWebP.RelPermalink }}"
+                    alt="TMU BattleBots Logo"
+                    style="width:220px;height:220px;object-fit:contain;margin:0 auto 1.5rem;display:block;border-radius:1rem;box-shadow:0 18px 48px rgba(0,0,0,0.45);"
+                    loading="eager"
+                    fetchpriority="high" />
+            {{ end }}
+            <p class="battlebots-kicker mb-4">Combat robotics at TMU</p>
+            <h1 class="mb-3 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl xl:text-6xl">
+                {{ .Site.Title }}
+            </h1>
+            <h2 class="pb-2 text-2xl font-light text-primary-200 md:text-4xl">
+                {{ .Site.Params.Moto }}
+            </h2>
+        </div>
+    </section>
+
+    <!-- Our mission section -->
+    <section class="mx-auto max-w-screen-xl px-4 py-12">
+        <div class="battlebots-panel p-6 md:p-10">
+            <div style="display:flex;align-items:center;gap:3rem;flex-wrap:wrap;">
+            <div style="flex:1;min-width:280px;">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    {{ .Site.Params.P1.Heading }}
+                </h2>
+                <div class="mt-6 space-y-6 text-gray-200">
+                    {{ range .Site.Params.P1.Content }}
+                    <p class="text-lg text-gray-200">
+                        {{ .text }}
+                    </p>
+                    {{ end }}
+                </div>
+            </div>
+            <div style="flex-shrink:0;">
+                <img src="{{ "images/site-logo.png" | relURL }}" alt="TMU BattleBots Logo"
+                     style="width:260px;height:260px;object-fit:contain;border-radius:1rem;box-shadow:0 8px 32px rgba(0,0,0,0.4);" />
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="mx-auto max-w-screen-xl px-4 py-6">
+        <div class="battlebots-card-grid">
+            <div class="battlebots-card">
+                <h3>Recruit future engineers</h3>
+                <p>Our team connects sponsors with students from mechanical, electrical, mechatronics, and software disciplines who already work on real hardware.</p>
+            </div>
+            <div class="battlebots-card">
+                <h3>Visible at every event</h3>
+                <p>Sponsor logos appear across the website, demos, competitions, and showcase material so your brand stays in front of TMU and the wider robotics community.</p>
+            </div>
+            <div class="battlebots-card">
+                <h3>Support a winning build culture</h3>
+                <p>Backing BattleBots helps students design, machine, wire, test, and iterate on competition-ready robots with a clear, professional identity.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sponsors section -->
+    <section class="px-4 mx-auto max-w-7xl md:pt-16 md:pb-16 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div class="battlebots-sponsor-grid mt-12 lg:mt-0">
+                {{ range .Site.Params.P3.Logos }}
+                <div class="battlebots-sponsor-tile col-span-1">
+                    {{ if .image }}
+                    {{ $sponsor := resources.Get .image }}
+                    {{ if eq $sponsor.MediaType.SubType "svg" }}
+                    <img src="{{ $sponsor.RelPermalink }}" width="138" height="48" class="max-h-12" alt="{{ .alt }}" loading="lazy" />
+                    {{ else }}
+                    <img src="{{ $sponsor.RelPermalink }}" width="{{ $sponsor.Width }}" height="{{ $sponsor.Height }}" class="max-h-12" alt="{{ .alt }}" loading="lazy" />
+                    {{ end }}
+                    {{ else }}
+                    {{ $sponsor := resources.Get "images/global/sample-logo.svg" }}
+                    <img src="{{ $sponsor.RelPermalink }}" width="138" height="48" class="max-h-12" alt="{{ .alt }}" loading="lazy" />
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            <div>
+                <p class="battlebots-kicker mb-3">Sponsorship package</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    {{ .Site.Params.P3.Heading }}
+                </h2>
+                {{ range .Site.Params.P3.Content }}
+                <p class="mt-6 max-w-3xl text-lg leading-7 text-gray-200">
+                    {{ .text }}
+                </p>
+                {{ end }}
+                {{ range .Site.Params.P3.Links }}
+                <div class="my-6">
+                    <a href="{{ .url }}" class="text-base font-medium text-primary-300">
+                        {{ .text }}&nbsp&rarr;
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    {{/* Newsletter signup section (commented out per request) */}}
+    {{/* {{ partial "newsletter.html" . }} */}}
+
+</main>
+{{ end }}

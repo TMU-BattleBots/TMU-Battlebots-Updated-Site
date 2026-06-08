@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <article class="battlebots-page">
+    <header class="battlebots-hero">
+      <div class="mx-auto max-w-5xl px-6 py-16 text-center">
+        <p class="battlebots-kicker mb-4">Sponsor TMU BattleBots</p>
+        <h1 class="text-5xl font-black text-white md:text-6xl">{{ .Title }}</h1>
+        {{ with .Description }}
+          <p class="mx-auto mt-4 max-w-3xl text-lg text-primary-100">{{ . }}</p>
+        {{ end }}
+        <div class="battlebots-chip-row mt-8">
+          <span class="battlebots-chip">Logo placement</span>
+          <span class="battlebots-chip">Recruitment access</span>
+          <span class="battlebots-chip">Competition visibility</span>
+          <span class="battlebots-chip">Season-long recognition</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-6xl px-4 py-12 md:px-6 lg:px-8">
+      <div class="battlebots-card-grid mb-10">
+        <div class="battlebots-card">
+          <h3>Access emerging talent</h3>
+          <p>Our members come from electrical, mechanical, mechatronics, and software backgrounds and gain hands-on experience with real systems.</p>
+        </div>
+        <div class="battlebots-card">
+          <h3>Visible where it matters</h3>
+          <p>Sponsor logos and acknowledgements travel with us to showcases, competitions, and the website, keeping your brand tied to active outreach.</p>
+        </div>
+        <div class="battlebots-card">
+          <h3>Support a strong team identity</h3>
+          <p>BattleBots is a practical, high-energy engineering team, and sponsorship helps us keep that build-and-compete cycle moving season after season.</p>
+        </div>
+      </div>
+
+      <div class="battlebots-panel-strong px-6 py-8 md:px-10 md:py-10">
+        <div class="battlebots-content prose prose-lg max-w-none">
+            {{ .Content }}
+        </div>
+      </div>
+    </div>
+
+  </article>
+{{ end }}

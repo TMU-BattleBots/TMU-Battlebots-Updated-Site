@@ -1,0 +1,205 @@
+baseURL: 'https://TMU-BattleBots.github.io/TMU-Battlebots-Updated-Site/'
+title: TMU BattleBots
+languageCode: en-us
+theme: tailbliss
+DefaultContentLanguage: en
+enableEmoji: true
+enableGitInfo: false
+enableRobotsTXT: true
+canonifyURLs: false
+pagination:
+  pagerSize: 9
+darkmode_js:
+  - assets/js/darkmode.js
+enableInlineShortcodes: true
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer:
+        apostrophe: '&rsquo;'
+        disable: false
+        ellipsis: '&hellip;'
+        emDash: '&mdash;'
+        enDash: '&ndash;'
+        leftAngleQuote: '&laquo;'
+        leftDoubleQuote: '&ldquo;'
+        leftSingleQuote: '&lsquo;'
+        rightAngleQuote: '&raquo;'
+        rightDoubleQuote: '&rdquo;'
+        rightSingleQuote: '&rsquo;'
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+
+params:
+  author: Amyn Jiwani & Software Team
+  authorimage: ../assets/images/global/logo.png
+  og_image: /images/battlebots-cover.png
+  moto: "Building Tomorrow's Combat Champions"
+  description: "TMU BattleBots"
+  disable_theme_toggle: false
+  disable_stay_uptodate: true
+
+  p1:
+    heading: "Our Mission"
+    image: "images/background-image.jpg"
+    content:
+      - text: "TMU BattleBots is a student-run club focused on designing, building, and competing with combat robots across different weight classes. Based at Toronto Metropolitan University, our team brings together students passionate about engineering, robotics, and competitive design."
+      - text: "We foster a collaborative and innovative environment where students can develop their skills and bring ideas to life. Our team works on everything from mechanical design and electronics to programming and combat strategy."
+      - text: "Led by captains Ammar & Palak, our diverse team includes members specializing in mechanical design, electronics, programming, and combat strategy. We work collaboratively to push the boundaries of robotics, developing innovative solutions for weapon systems, drive mechanisms, and control systems."
+  p3:
+    heading: "Backed by our sponsors"
+    content:
+      - text: "We are grateful for the support of our sponsors and partners who help make TMU BattleBots possible."
+    links:
+      - text: Meet our sponsors and supporters
+        url: /sponsors/
+    logos:
+      - identifier: a
+      - identifier: b
+      - identifier: c
+      - identifier: d
+      - identifier: e
+      - identifier: f
+  p2:
+    heading: "Stay Up to Date"
+    content:
+      - text: "Enter your email to stay up-to-date with the latest news and updates about our team!"
+    action: "https://formspree.io/f/xbdpgrpr"
+    label: "Email address"
+    placeholder: "Enter your email"
+    button: "Notify me"
+
+  social_media:
+    github:
+      enabled: true
+      url: 'https://github.com/TMU-BattleBots'
+    facebook:
+      enabled: false
+      url: ''
+    instagram:
+      enabled: true
+      url: 'https://www.instagram.com/tmubattlebots/'
+    twitter:
+      enabled: false
+      url: ''
+    
+
+menu:
+  main:
+    - identifier: arsenal
+      name: Our Bots
+      url: /our_bots/
+      weight: 10
+    - identifier: calculator
+      name: Calculator
+      url: /calculator/
+      weight: 20
+    - identifier: gallery
+      name: Gallery
+      url: /gallery/
+      weight: 30
+    - identifier: game
+      name: Game
+      url: /game/
+      weight: 40
+    - identifier: sponsors
+      name: Sponsors
+      url: /sponsors/
+      weight: 45
+    - identifier: join-team
+      name: Join The Team
+      url: "https://forms.gle/cHGJAL5FQGp8nD5n7"
+      weight: 50
+  dropdown:
+    - identifier: appearance
+      pre: stars # can be stars, comments or piechart
+      name: Appearance
+      post: "Easy customization"
+      url: "#"
+      weight: 10
+    - identifier: comments
+      pre: comments # can be stars, comments or piechart
+      name: Comments
+      post: "Check your latest comments"
+      url: "#"
+      weight: 20
+    - identifier: analytics
+      pre: piechart # can be stars, comments or piechart
+      name: Analytics
+      post: "Take a look at your statistics"
+      url: "#"
+      weight: 30
+  footer:
+    - identifier: arsenal
+      name: Our Bots
+      url: /our_bots/
+      weight: 20
+    - identifier: calculator
+      name: Calculator
+      url: /calculator/
+      weight: 30
+    - identifier: gallery
+      name: Gallery
+      url: /gallery/
+      weight: 35
+    - identifier: game
+      name: Game
+      url: /game/
+      weight: 40
+    - identifier: sponsors
+      name: Sponsors
+      url: /sponsors/
+      weight: 45
+    - identifier: join-team
+      name: Join The Team
+      url: "https://forms.gle/cHGJAL5FQGp8nD5n7"
+      weight: 50
+
+taxonomies:
+  category: Categories
+  tag: Tags
+
+privacy:
+  disqus:
+    disable: false
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: false
+    useSessionStorage: false
+  instagram:
+    disable: false
+    simple: false
+  twitter:
+    disable: false
+    enableDNT: false
+    simple: false
+  vimeo:
+    disable: false
+    enableDNT: false
+    simple: false
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.148.2"

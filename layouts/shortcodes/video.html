@@ -1,0 +1,10 @@
+<div class="video-embed" style="--padding-bottom: {{ with .Get "ratio" }}{{ . }}%{{ else }}56.25%{{ end }};">
+  <iframe src="{{ .Get "src" }}"
+          title="{{ .Get "title" }}"
+          loading="lazy"
+          allow="{{ with .Get "allow" }}{{ . }}{{ else }}accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture{{ end }}"
+          frameborder="0"
+          allowfullscreen
+          sandbox="allow-scripts allow-same-origin allow-presentation allow-popups">
+  </iframe>
+</div>
